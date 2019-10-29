@@ -1,0 +1,55 @@
+{
+    "name": "st-run",
+    "version": "2.0.0-alpha.1",
+    "publishConfig": {
+        "access": "public"
+    },
+    "keywords": [
+        "npx",
+        "cache"
+    ],
+    "description": "Executes like npx but using a smart cache for offline use.",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/springtype-org/springtype.git"
+    },
+    "scripts": {
+        "test": "jest --verbose --runInBand --detectOpenHandles",
+        "prebuild": "rm -rf dist",
+        "build": "tsc",
+        "postbuild": "cp package.json dist && cp -r node_modules dist"
+    },
+    "engines": {
+        "node": ">=10"
+    },
+    "bin": {
+        "st-run": "./cli.js"
+    },
+    "main": "index.js",
+    "author": "Aron Homberg <info@aron-homberg.de>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/springtype-org/springtype/issues"
+    },
+    "homepage": "https://www.springtype.org",
+    "devDependencies": {
+        "@types/jest": "^24.0.20",
+        "@types/node": "^12.11.7",
+        "jest": "^24.9.0",
+        "ts-jest": "^24.1.0",
+        "ts-node": "^8.4.1",
+        "typescript": "^3.6.4"
+    },
+    "bundledDependencies": [
+        "chalk",
+        "cross-spawn",
+        "public-ip",
+        "st-rm-rf"
+    ],
+    "dependencies": {
+        "chalk": "^2.4.2",
+        "cross-spawn": "^7.0.1",
+        "public-ip": "^3.2.0",
+        "st-rm-rf": "^1.0.0-alpha.1.42"
+    }
+}
