@@ -1,4 +1,4 @@
-### `npx` replacement: `st-run st-rm-rf dist + system:tsc`
+### `npx` replacement: `st-run st-rm-rf dist ++ system:tsc`
 
 > 💨Just like `npx` but chainable, way faster and always using `@latest` of any command 💨
 
@@ -49,11 +49,11 @@ And use it globally just like `npx`:
     st-run st-cp package.json package.json2
 
 
-#### `commandA arg1 + commandB arg1 arg2` Chaining Syntax
+#### `commandA arg1 ++ commandB arg1 arg2` Chaining Syntax
 
 You can get rid of special node scripts to chain commands by letting `st-run` chain them for you:
 
-    st-run st-cp package.json package.json2 + st-cp package.json2 package.json3
+    st-run st-cp package.json package.json2 ++ st-cp package.json2 package.json3
 
 As you can see, a simple `+` chains two or more commands. There is no command count limit.
 
@@ -61,7 +61,7 @@ As you can see, a simple `+` chains two or more commands. There is no command co
 
 With `st-run` you can have multiple cached versions at the same time (just like with `maven`, `gradle` etc.):
 
-    st-run st-cp@1.0.0 package.json package.json2 + st-cp@2.0.0 package.json2 package.json3
+    st-run st-cp@1.0.0 package.json package.json2 ++ st-cp@2.0.0 package.json2 package.json3
 
 Cool?
 
