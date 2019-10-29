@@ -1,6 +1,6 @@
 {
     "name": "st-run",
-    "version": "2.0.0-alpha.3",
+    "version": "2.0.0-alpha.6",
     "publishConfig": {
         "access": "public"
     },
@@ -54,6 +54,6 @@
         "cross-spawn": "^7.0.1",
         "public-ip": "^3.2.0",
         "st-rm-rf": "^1.0.0-alpha.1.42",
-        "st-run": "latest"
+        "st-run": "2.0.0-alpha.4"
     }
 }

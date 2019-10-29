@@ -3322,7 +3322,7 @@ st-rm-rf@^1.0.0-alpha.1.42:
     chalk "^2.4.2"
     cross-spawn "^6.0.5"
 
-st-run@^2.0.0-alpha.2:
+st-run@2.0.0-alpha.2:
   version "2.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/st-run/-/st-run-2.0.0-alpha.2.tgz#c55bbc803f630757f225529316deab3b80d58458"
   integrity sha512-aOs+LCORRJ61kETp5uI7FzHX8/eGuCvVJRH0zABc67O6fhU5FdmrRW+ihqc3g+B1xwfssUIVrsHjYVh1lwjrUQ==
