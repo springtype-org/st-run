@@ -23,7 +23,7 @@ And it always checks for the `@latest` version when your machine is online.
 
 #### Usage
 
-You can use `st-run` in npm scripts like this:
+You can use `st-run` in npm scripts [like this](https://github.com/springtype-org/st-run/blob/master/package.json#L23):
 
 ```
 {
