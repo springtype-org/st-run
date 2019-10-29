@@ -1,13 +1,13 @@
 import { sep } from "path";
 import { fetchLastestPackageVersion } from "../dist/fetch-latest-package-version";
 import { isPackageInstalled } from "../dist/is-package-installed";
+import { npmInternalCacheDir, safelyResolvePackageCachePath } from "../dist/safely-resolve-package-cache-path";
 import { getPackageVersionedPath } from "./../dist/get-package-versioned-path";
-import { npmInternalCacheDir, resolvePackageCachePath } from "./../dist/resolve-package-cache-path";
 import { invalidatePackageCachePath } from "./../src/invalidate-package-cache";
 
 describe("resolve package cache path", () => {
   it("returns a valid cache path", () => {
-    const packageCachePath = resolvePackageCachePath("st-cp");
+    const packageCachePath = safelyResolvePackageCachePath("st-cp");
     expect(packageCachePath).toBeDefined();
     expect(packageCachePath.endsWith(`${npmInternalCacheDir}${sep}st-cp`)).toBeTruthy();
   });

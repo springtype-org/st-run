@@ -14,7 +14,7 @@
         "url": "git+https://github.com/springtype-org/springtype.git"
     },
     "scripts": {
-        "test": "jest --verbose --runInBand --detectOpenHandles",
+        "test": "jest --verbose --runInBand",
         "prebuild": "rm -rf dist",
         "build": "tsc",
         "postbuild": "cp package.json dist && cp -r node_modules dist"
