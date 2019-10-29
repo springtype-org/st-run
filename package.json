@@ -11,9 +11,10 @@
         "cross-platform",
         "latest",
         "up-to-date",
-        "cache"
+        "cache",
+        "command executor"
     ],
-    "description": "A chainable, faster, always up-to-date npx",
+    "description": "A chainable, faster, always up-to-date npx and system command executor",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/springtype-org/springtype.git"
