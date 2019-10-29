@@ -1,4 +1,4 @@
-### `npx` replacement: `st-run st-rm-rf dist + system:tsc + st-cp package.json dist`
+### `npx` replacement: `st-run st-rm-rf dist + system:tsc`
 
 > 💨Just like `npx` but chainable, way faster and always using `@latest` of any command 💨
 
