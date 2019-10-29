@@ -1,14 +1,19 @@
 {
     "name": "st-run",
-    "version": "2.0.0-alpha.1",
+    "version": "2.0.0-alpha.2",
     "publishConfig": {
         "access": "public"
     },
     "keywords": [
         "npx",
+        "fast",
+        "chainable",
+        "cross-platform",
+        "latest",
+        "up-to-date",
         "cache"
     ],
-    "description": "Executes like npx but using a smart cache for offline use.",
+    "description": "A chainable, faster, always up-to-date npx",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/springtype-org/springtype.git"
