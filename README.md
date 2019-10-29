@@ -1,12 +1,12 @@
-### `st-run yarn add a + yarn add b + yarn add c`
+### `npx` replacement: `st-run st-rm-rf dist + system:tsc + st-cp package.json dist`
 
-> 💨Just like `npx` but chainable, way faster and always using `@latest` of any command. 💨
+> 💨Just like `npx` but chainable, way faster and always using `@latest` of any command 💨
 
-> 🎉 Get rid of all node scripts to chain commands 🎉
+> 🎉 Get rid of node scripts to chain commands 🎉
 
-> 🚀Get rid of direct & out-dated CLI dependencies. 🚀
+> 🚀Get rid of direct & out-dated CLI dependencies 🚀
 
-> 🧑‍🤝‍🧑 Cross-platform and end-2-end tested. ✨
+> 🧑‍🤝‍🧑 Cross-platform and end-2-end tested ✨
 
 #### Performance
 
