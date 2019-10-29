@@ -1,6 +1,6 @@
 {
     "name": "st-run",
-    "version": "2.0.0-alpha.2",
+    "version": "2.0.0-alpha.3",
     "publishConfig": {
         "access": "public"
     },
@@ -20,9 +20,7 @@
     },
     "scripts": {
         "test": "jest --verbose --runInBand",
-        "prebuild": "rm -rf dist",
-        "build": "tsc",
-        "postbuild": "cp package.json dist && cp -r node_modules dist"
+        "build": "st-run st-rm-rf dist + system:tsc + st-cp package.json dist + st-cp node_modules dist"
     },
     "engines": {
         "node": ">=10"
@@ -55,6 +53,7 @@
         "chalk": "^2.4.2",
         "cross-spawn": "^7.0.1",
         "public-ip": "^3.2.0",
-        "st-rm-rf": "^1.0.0-alpha.1.42"
+        "st-rm-rf": "^1.0.0-alpha.1.42",
+        "st-run": "latest"
     }
 }
