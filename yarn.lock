@@ -3341,6 +3341,17 @@ st-run@2.0.0-alpha.13:
     st-rm-rf "^2.0.0-alpha.1"
     st-run "2.0.0-alpha.4"
 
+st-run@2.0.0-alpha.15:
+  version "2.0.0-alpha.15"
+  resolved "https://registry.yarnpkg.com/st-run/-/st-run-2.0.0-alpha.15.tgz#d7a77cf922034ea2f7143a5cffbcd462e3b133d9"
+  integrity sha512-WjuBO+y9iVgZZL/gX5aRYVsBcT+A4gXJWB9TLBjnW+YyASA/gTtRQbhzSZ83FFS9m0BSYbPtqm+Ym06swXCUtw==
+  dependencies:
+    chalk "^2.4.2"
+    cross-spawn "^7.0.1"
+    public-ip "^3.2.0"
+    st-rm-rf "^2.0.0-alpha.1"
+    st-run "2.0.0-alpha.13"
+
 st-run@2.0.0-alpha.2:
   version "2.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/st-run/-/st-run-2.0.0-alpha.2.tgz#c55bbc803f630757f225529316deab3b80d58458"

@@ -10,7 +10,7 @@ import chalk from "chalk";
 export const installAndExecute = async (packageName: string, args: Array<string>) => {
   // support for system:$command syntax
   if(!packageName){
-    console.log(chalk.red('Noting to run...'));
+    console.log(chalk.red('Nothing to run...'));
     process.exit(1);
   }
   if (packageName.startsWith("system:")) {
