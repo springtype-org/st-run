@@ -9,7 +9,7 @@ import { installAndExecute } from "./install-and-execute";
   let argsSplit = [...args];
   let indexToSplit;
 
-  while ((indexToSplit = argsSplit.indexOf("+"))) {
+  while ((indexToSplit = argsSplit.indexOf("++"))) {
 
     let command = argsSplit.slice(0, indexToSplit);
     argsSplit = argsSplit.slice(indexToSplit + 1);
