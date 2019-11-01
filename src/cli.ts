@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 import { installAndExecute } from "./install-and-execute";
 
 (async () => {
