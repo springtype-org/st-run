@@ -1,10 +1,11 @@
 import { existsSync, mkdirSync } from "fs";
+import { platform } from "os"
 import { resolve } from "path";
 
 export const npmInternalCacheDir = "_st_run";
 
 export const safelyResolvePackageCachePath = (packageName: string): string => {
-  const baseCachePath = process.platform !== "win32" ? resolve(process.env.HOME, ".npm") : resolve(process.env.APPDATA, "npm-cache");
+  const baseCachePath = platform() !== "win32" ? resolve(process.env.HOME, ".npm") : resolve(process.env.APPDATA, "npm-cache");
 
   const stxCachePath = resolve(baseCachePath, npmInternalCacheDir);
 

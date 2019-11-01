@@ -21,7 +21,7 @@ import { installAndExecute } from "./install-and-execute";
     }
   }
 
-  for (let i = 0; i < commands.length; i++) {
-    await installAndExecute(commands[i][0], commands[i].slice(1));
+  for (const command of commands) {
+    await installAndExecute(command[0], command.slice(1));
   }
 })();
