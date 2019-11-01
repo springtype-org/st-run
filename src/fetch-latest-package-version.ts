@@ -1,5 +1,5 @@
 import { execute } from "./execute";
 
 export const fetchLatestPackageVersion = (packageName: string) => {
-  return execute("yarn", ["info", packageName, "version"]).trim();
+  return execute("npm", ["info", packageName, "version"]).trim();
 };

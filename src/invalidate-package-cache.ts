@@ -9,6 +9,8 @@ export const invalidatePackageCachePath = (packageName: string, version?: string
   } else {
     path = safelyResolvePackageCachePath(packageName);
   }
-  deletePathOrFile(path);
+  try {
+    deletePathOrFile(path);
+  } catch (e) {} // ignore
   return path;
 };

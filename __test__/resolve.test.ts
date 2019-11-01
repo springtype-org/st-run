@@ -1,5 +1,5 @@
 import { sep } from "path";
-import { fetchLastestPackageVersion } from "../dist/fetch-latest-package-version";
+import { fetchLatestPackageVersion } from "../dist/fetch-latest-package-version";
 import { isPackageInstalled } from "../dist/is-package-installed";
 import { npmInternalCacheDir, safelyResolvePackageCachePath } from "../dist/safely-resolve-package-cache-path";
 import { getPackageVersionedPath } from "./../dist/get-package-versioned-path";
@@ -24,7 +24,7 @@ describe("resolve package cache path", () => {
 
   it("safely checks if the latest package is installed", () => {
     invalidatePackageCachePath("st-cp");
-    const latestVersion = fetchLastestPackageVersion("st-cp");
+    const latestVersion = fetchLatestPackageVersion("st-cp");
     const isItInstalled = isPackageInstalled("st-cp", latestVersion);
     invalidatePackageCachePath("st-cp", latestVersion);
     expect(isItInstalled).toBeFalsy();

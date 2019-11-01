@@ -11,7 +11,7 @@ export const installPackage = (packageName: string, version: string = "latest"):
   invalidatePackageCachePath(packageName);
 
   const installCachePath = getPackageVersionedPath(packageName, version);
-  execute("yarn", ["add", `${packageName}@${version}`, "--cwd", installCachePath]);
+  execute("npm", ["install", `${packageName}@${version}`, "--prefix", installCachePath]);
   // write version into cache file for offline cache resolve
   writeFileSync(resolve(safelyResolvePackageCachePath(packageName), latestInstalledVersionCacheFileName), version);
   return installCachePath;
