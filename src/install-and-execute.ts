@@ -1,3 +1,4 @@
+import chalk from "chalk";
 import { execute } from "./execute";
 import { fetchLatestPackageVersion } from "./fetch-latest-package-version";
 import { getExecutablePath } from "./get-executable-file";
@@ -6,7 +7,6 @@ import { getPackageVersionedPath } from "./get-package-versioned-path";
 import { installPackage } from "./install-package";
 import { isOnline } from "./is-online";
 import { isPackageInstalled } from "./is-package-installed";
-import chalk from "chalk";
 export const installAndExecute = async (packageName: string, args: Array<string>) => {
   // support for system:$command syntax
   if(!packageName){
@@ -32,7 +32,7 @@ export const installAndExecute = async (packageName: string, args: Array<string>
     isSpecificRequestedVersionInstalled = isPackageInstalled(packageName, specificRequestedVersion);
   }
 
-  const latestInstalledVersion = getLatestInstalledVersion(packageName);
+  let latestInstalledVersion = getLatestInstalledVersion(packageName);
   let versionToUse: string;
 
   if (await isOnline()) {
@@ -43,13 +43,13 @@ export const installAndExecute = async (packageName: string, args: Array<string>
         console.log("[i] Package is not installed. Installing: ", versionToUse, "...");
         installPackage(packageName);
         versionToUse = fetchLatestPackageVersion(packageName);
+        latestInstalledVersion = versionToUse;
       } else {
         console.log("[i] Latest installed version is: ", latestInstalledVersion);
       }
 
       if (versionToUse !== latestInstalledVersion) {
-        console.log("versionToUse", versionToUse, "!= latestInstalledVersion", latestInstalledVersion);
-
+        
         console.log("[i] Cached version is out of date. Installing: ", versionToUse, "...");
         installPackage(packageName, versionToUse);
         versionToUse = fetchLatestPackageVersion(packageName);
@@ -63,16 +63,15 @@ export const installAndExecute = async (packageName: string, args: Array<string>
     }
   } else {
     if (!specificRequestedVersion) {
-      console.log("[!!] Warning: Machine is offline. Using local cache version: ", latestInstalledVersion);
-
+     
       if (!latestInstalledVersion) {
-        console.log("[i] Package is not installed. Exiting.");
+        console.log("[!] Offline mode: Package is not installed. Exiting.");
         process.exit(1);
       }
       versionToUse = latestInstalledVersion;
     } else {
       if (!isSpecificRequestedVersionInstalled) {
-        console.log("[i] Specific version is not installed. Exiting.");
+        console.log("[!] Offline mode: Specific version is not installed. Exiting.");
         process.exit(1);
       }
       versionToUse = specificRequestedVersion;
