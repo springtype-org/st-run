@@ -1,5 +1,9 @@
-import { resolve } from "path";
+import {resolve} from "path";
 
 export const getExecutablePath = (packageName: string, versionedPackageCachePath: string) => {
-  return resolve(versionedPackageCachePath, 'node_modules', '.bin', packageName);
+    if (process.platform === "win32") {
+        return resolve(versionedPackageCachePath, 'node_modules', packageName);
+    } else {
+        return resolve(versionedPackageCachePath, 'node_modules', '.bin', packageName);
+    }
 };

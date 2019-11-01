@@ -3322,6 +3322,14 @@ st-rm-rf@^1.0.0-alpha.1.42:
     chalk "^2.4.2"
     cross-spawn "^6.0.5"
 
+st-rm-rf@^2.0.0-alpha.1:
+  version "2.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/st-rm-rf/-/st-rm-rf-2.0.0-alpha.1.tgz#cff9c90a117c3d7bc929db3bf8267f2c82423cfe"
+  integrity sha512-0V1eWc/zdtEN2wtOAPoQ/IdKwQnO9PJz2/VCiVcalZBSHJ1us3Nr0IMMR4q0Iou3Nqf3CHrHMnlrFMCNBVKD8g==
+  dependencies:
+    chalk "^2.4.2"
+    cross-spawn "^6.0.5"
+
 st-run@2.0.0-alpha.2:
   version "2.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/st-run/-/st-run-2.0.0-alpha.2.tgz#c55bbc803f630757f225529316deab3b80d58458"

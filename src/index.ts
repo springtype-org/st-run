@@ -1,5 +1,5 @@
 export { execute } from "./execute";
-export { fetchLastestPackageVersion } from "./fetch-latest-package-version";
+export { fetchLatestPackageVersion } from "./fetch-latest-package-version";
 export { getExecutablePath } from "./get-executable-file";
 export { getLatestInstalledVersion } from "./get-latest-installed-version";
 export { installAndExecute } from "./install-and-execute";

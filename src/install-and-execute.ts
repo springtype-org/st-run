@@ -1,11 +1,12 @@
 import { execute } from "./execute";
-import { fetchLastestPackageVersion } from "./fetch-latest-package-version";
+import { fetchLatestPackageVersion } from "./fetch-latest-package-version";
 import { getExecutablePath } from "./get-executable-file";
 import { getLatestInstalledVersion } from "./get-latest-installed-version";
 import { getPackageVersionedPath } from "./get-package-versioned-path";
 import { installPackage } from "./install-package";
 import { isOnline } from "./is-online";
 import { isPackageInstalled } from "./is-package-installed";
+import chalk from "chalk";
 export const installAndExecute = async (packageName: string, args: Array<string>) => {
   // support for system:$command syntax
   if (packageName.startsWith("system:")) {
@@ -32,12 +33,12 @@ export const installAndExecute = async (packageName: string, args: Array<string>
 
   if (await isOnline()) {
     if (!specificRequestedVersion) {
-      versionToUse = fetchLastestPackageVersion(packageName);
+      versionToUse = fetchLatestPackageVersion(packageName);
 
       if (!latestInstalledVersion) {
         console.log("[i] Package is not installed. Installing: ", versionToUse, "...");
         installPackage(packageName);
-        versionToUse = fetchLastestPackageVersion(packageName);
+        versionToUse = fetchLatestPackageVersion(packageName);
       } else {
         console.log("[i] Latest installed version is: ", latestInstalledVersion);
       }
@@ -47,7 +48,7 @@ export const installAndExecute = async (packageName: string, args: Array<string>
 
         console.log("[i] Cached version is out of date. Installing: ", versionToUse, "...");
         installPackage(packageName, versionToUse);
-        versionToUse = fetchLastestPackageVersion(packageName);
+        versionToUse = fetchLatestPackageVersion(packageName);
       }
     } else {
       if (!isSpecificRequestedVersionInstalled) {

@@ -1,4 +1,4 @@
-import { removePathOrFile } from "st-rm-rf";
+import { deletePathOrFile } from "st-rm-rf";
 import { getPackageVersionedPath } from "./get-package-versioned-path";
 import { safelyResolvePackageCachePath } from "./safely-resolve-package-cache-path";
 
@@ -9,6 +9,6 @@ export const invalidatePackageCachePath = (packageName: string, version?: string
   } else {
     path = safelyResolvePackageCachePath(packageName);
   }
-  removePathOrFile(path);
+  deletePathOrFile(path);
   return path;
 };
