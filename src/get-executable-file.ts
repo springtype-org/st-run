@@ -7,7 +7,7 @@ export const getExecutablePath = (packageName: string, versionedPackageCachePath
         const modulePath = resolve(versionedPackageCachePath, 'node_modules', packageName);
         const bin = readPackageJson(modulePath).bin || {};
         const executionJs = bin[packageName];
-        return  resolve(modulePath,executionJs);
+        return resolve(modulePath, executionJs);
     } else {
         return resolve(versionedPackageCachePath, 'node_modules', '.bin', packageName);
     }

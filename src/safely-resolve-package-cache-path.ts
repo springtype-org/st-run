@@ -1,22 +1,22 @@
-import { existsSync, mkdirSync } from "fs";
-import { platform } from "os"
-import { resolve } from "path";
+import {existsSync, mkdirSync} from "fs";
+import {platform} from "os"
+import {resolve} from "path";
 
 export const npmInternalCacheDir = "_st_run";
 
 export const safelyResolvePackageCachePath = (packageName: string): string => {
-  const baseCachePath = platform() !== "win32" ? resolve(process.env.HOME, ".npm") : resolve(process.env.APPDATA, "npm-cache");
+    const baseCachePath = platform() !== "win32" ? resolve(process.env.HOME, ".npm") : resolve(process.env.APPDATA, "npm-cache");
 
-  const stxCachePath = resolve(baseCachePath, npmInternalCacheDir);
+    const stxCachePath = resolve(baseCachePath, npmInternalCacheDir);
 
-  if (!existsSync(stxCachePath)) {
-    mkdirSync(stxCachePath);
-  }
+    if (!existsSync(stxCachePath)) {
+        mkdirSync(stxCachePath);
+    }
 
-  const packageCachePath = resolve(stxCachePath, packageName);
+    const packageCachePath = resolve(stxCachePath, packageName);
 
-  if (!existsSync(packageCachePath)) {
-    mkdirSync(packageCachePath);
-  }
-  return packageCachePath;
+    if (!existsSync(packageCachePath)) {
+        mkdirSync(packageCachePath);
+    }
+    return packageCachePath;
 };
