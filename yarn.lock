@@ -3314,6 +3314,22 @@ sshpk@^1.7.0:
     safer-buffer "^2.0.2"
     tweetnacl "~0.14.0"
 
+st-cp@^2.0.0-alpha.4:
+  version "2.0.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/st-cp/-/st-cp-2.0.0-alpha.4.tgz#5681c536168fbaf5257aff07020004eabd79b2d2"
+  integrity sha512-MwQWv5+6iqjSPCaYUl326B2pKfRsXx2SOddL6/odWNvIIYY4pT5wul+LIJaFwNdwRRAUHmfbpTpfqh0Qyq6k7A==
+  dependencies:
+    chalk "^2.4.2"
+
+st-mkdir@^1.0.0-alpha.4:
+  version "1.0.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/st-mkdir/-/st-mkdir-1.0.0-alpha.4.tgz#11b8857c307cbd6c20761adaf3d70a688b8ed4f9"
+  integrity sha512-P2044vhpmTcbycONBbzazjvlrVUtWPIRQaLJRofmR9NSe9INgArWoZSD4/WBiw16lVxP0GOAryZA1zCTeOsPgg==
+  dependencies:
+    chalk "^2.4.2"
+    st-cp "^2.0.0-alpha.4"
+    st-rm-rf "^2.0.0-alpha.8"
+
 st-rm-rf@^1.0.0-alpha.1.42:
   version "1.0.0-alpha.1.42"
   resolved "https://registry.yarnpkg.com/st-rm-rf/-/st-rm-rf-1.0.0-alpha.1.42.tgz#62edebba9af5be5ffd9580029477a041875c59d6"
@@ -3330,10 +3346,10 @@ st-rm-rf@^2.0.0-alpha.1:
     chalk "^2.4.2"
     cross-spawn "^6.0.5"
 
-st-rm-rf@^2.0.0-alpha.5:
-  version "2.0.0-alpha.5"
-  resolved "https://registry.yarnpkg.com/st-rm-rf/-/st-rm-rf-2.0.0-alpha.5.tgz#a9d80fe26410ea2c4b0250725f3ba87d2c8542d6"
-  integrity sha512-fOmz8zpLidfUXFkTVaM2QkTxwUcWsKSObrZb4fXnIV0eSBr+AvU5RZozH9pfGqmHqwGv7rKWN50W1puz4iB6ag==
+st-rm-rf@^2.0.0-alpha.8:
+  version "2.0.0-alpha.8"
+  resolved "https://registry.yarnpkg.com/st-rm-rf/-/st-rm-rf-2.0.0-alpha.8.tgz#4aa761378d4d7bae2dd6fe19516401cddd4c6c50"
+  integrity sha512-gIdb2lZdsHjtZ9nBMrAYnfiuyO1QEqwdH3QBc8jR2QCq92AOxFdhESt3u5TDWIRuwxA/T+oFmS2x3HPUQaeuqA==
   dependencies:
     chalk "^2.4.2"
 

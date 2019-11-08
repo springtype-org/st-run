@@ -1,58 +1,62 @@
 {
-    "name": "st-run",
-    "version": "2.0.0-alpha.29",
-    "publishConfig": {
-        "access": "public"
-    },
-    "keywords": [
-        "npx",
-        "fast",
-        "chainable",
-        "cross-platform",
-        "latest",
-        "up-to-date",
-        "cache",
-        "command executor"
-    ],
-    "description": "A chainable, faster, always up-to-date npx and system command executor",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/springtype-org/springtype.git"
-    },
-    "scripts": {
-        "test": "jest --verbose --runInBand",
-        "build": "st-run st-rm-rf dist ++ system:tsc ++ st-cp package.json node_modules README.md dist"
-    },
-    "engines": {
-        "node": ">=10"
-    },
-    "bin": {
-        "st-run": "./cli.js"
-    },
-    "main": "index.js",
-    "author": "Aron Homberg <info@aron-homberg.de>",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/springtype-org/springtype/issues"
-    },
-    "homepage": "https://www.springtype.org",
-    "devDependencies": {
-        "@types/jest": "^24.0.21",
-        "@types/node": "^12.12.5",
-        "jest": "^24.9.0",
-        "ts-jest": "^24.1.0",
-        "ts-node": "^8.4.1",
-        "typescript": "^3.6.4"
-    },
-    "bundledDependencies": [
-        "chalk",
-        "public-ip",
-        "st-rm-rf"
-    ],
-    "dependencies": {
-        "chalk": "^2.4.2",
-        "public-ip": "^3.2.0",
-        "st-rm-rf": "^2.0.0-alpha.5",
-        "st-run": "2.0.0-alpha.17"
-    }
+  "name": "st-run",
+  "version": "2.0.0-alpha.31",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "npx",
+    "fast",
+    "chainable",
+    "cross-platform",
+    "latest",
+    "up-to-date",
+    "cache",
+    "command executor"
+  ],
+  "description": "A chainable, faster, always up-to-date npx and system command executor",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/springtype-org/springtype.git"
+  },
+  "scripts": {
+    "test": "jest --verbose --runInBand",
+    "prebuild": "st-rm-rf dist",
+    "build": "tsc",
+    "postbuild": "st-cp package.json node_modules README.md dist"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "bin": {
+    "st-run": "./cli.js"
+  },
+  "main": "index.js",
+  "author": "Aron Homberg <info@aron-homberg.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/springtype-org/springtype/issues"
+  },
+  "homepage": "https://www.springtype.org",
+  "devDependencies": {
+    "@types/jest": "^24.0.21",
+    "@types/node": "^12.12.5",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.1.0",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.4"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "st-cp": "^2.0.0-alpha.4",
+    "st-mkdir": "^1.0.0-alpha.4",
+    "st-rm-rf": "^2.0.0-alpha.8"
+  },
+  "bundleDependencies": [
+    "chalk",
+    "st-rm-rf"
+  ],
+  "directories": {
+    "test": "test"
+  }
 }
