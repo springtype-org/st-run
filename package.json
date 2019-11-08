@@ -1,6 +1,6 @@
 {
     "name": "st-run",
-    "version": "2.0.0-alpha.25",
+    "version": "2.0.0-alpha.29",
     "publishConfig": {
         "access": "public"
     },
@@ -46,13 +46,11 @@
     },
     "bundledDependencies": [
         "chalk",
-        "cross-spawn",
         "public-ip",
         "st-rm-rf"
     ],
     "dependencies": {
         "chalk": "^2.4.2",
-        "cross-spawn": "^7.0.1",
         "public-ip": "^3.2.0",
         "st-rm-rf": "^2.0.0-alpha.5",
         "st-run": "2.0.0-alpha.17"

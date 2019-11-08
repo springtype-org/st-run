@@ -1,5 +1,5 @@
 import {writeFileSync} from "fs";
-import {execute} from "./execute";
+import {execute, executeSync} from "./execute";
 import {getPackageVersionedPath} from "./get-package-versioned-path";
 import {invalidatePackageCachePath} from "./invalidate-package-cache";
 import {safelyResolvePackageCachePath} from "./safely-resolve-package-cache-path";
@@ -12,7 +12,7 @@ export const installPackage = async (packageName: string, version: string): Prom
     invalidatePackageCachePath(packageName);
 
     const installCachePath = getPackageVersionedPath(packageName, version);
-    await execute(["npm", "install", `${packageName}@${version}`, "--prefix", `"${installCachePath}"`]);
+    executeSync(["npm", "install", `${packageName}@${version}`, "--prefix", `"${installCachePath}"`]);
     // write version into cache file for offline cache resolve
     writeFileSync(osPath.resolve(safelyResolvePackageCachePath(packageName), latestInstalledVersionCacheFileName), version);
     return installCachePath;
