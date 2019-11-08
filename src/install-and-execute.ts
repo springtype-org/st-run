@@ -7,6 +7,7 @@ import {getPackageVersionedPath} from "./get-package-versioned-path";
 import {installPackage} from "./install-package";
 import {isOnline} from "./is-online";
 import {isPackageInstalled} from "./is-package-installed";
+import {installPeerDependencies} from "./install-peer-dependencies";
 
 export const installAndExecute = async (packageName: string, args: Array<string>) => {
     // support for system:$command syntax
@@ -39,19 +40,19 @@ export const installAndExecute = async (packageName: string, args: Array<string>
             versionToUse = await fetchLatestPackageVersion(packageName);
             if (!latestInstalledVersion) {
                 console.log("[i] Package is not installed. Installing: ", versionToUse, "...");
-                installPackage(packageName, versionToUse);
+                await installPackage(packageName, versionToUse);
             } else {
                 console.log("[i] Latest installed version is: ", latestInstalledVersion);
 
                 if (versionToUse !== latestInstalledVersion) {
                     console.log("[i] Cached version is out of date. Installing: ", versionToUse, "...");
-                    installPackage(packageName, versionToUse);
+                    await installPackage(packageName, versionToUse);
                 }
             }
         } else {
             if (!isSpecificRequestedVersionInstalled) {
                 console.log("[i] Specific version is not installed. Installing: ", specificRequestedVersion, "...");
-                installPackage(packageName, specificRequestedVersion);
+                await installPackage(packageName, specificRequestedVersion);
                 versionToUse = specificRequestedVersion;
             }
         }
@@ -74,14 +75,14 @@ export const installAndExecute = async (packageName: string, args: Array<string>
 
     const installedPackagePath = getPackageVersionedPath(packageName, versionToUse);
     const executable = getExecutablePath(packageName, installedPackagePath);
+    await installPeerDependencies(packageName, installedPackagePath);
 
-    try{
-
-    // process.execPath -> node executable
-    executeSync([`"${process.execPath}"`, `${executable}`, ...args],{
-        stdio: "inherit",
-    });
-    }catch(e){
+    try {
+        // process.execPath -> node executable
+        executeSync([`"${process.execPath}"`, `${executable}`, ...args], {
+            stdio: "inherit",
+        });
+    } catch (e) {
         console.log(chalk.red('-> unexpected termination.'))
     }
 };

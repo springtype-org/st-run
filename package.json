@@ -1,6 +1,6 @@
 {
     "name": "st-run",
-    "version": "2.0.0-alpha.21",
+    "version": "2.0.0-alpha.25",
     "publishConfig": {
         "access": "public"
     },

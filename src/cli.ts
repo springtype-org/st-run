@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 import {execute} from "./execute";
 import {installAndExecute} from "./install-and-execute";
 import chalk from "chalk";
