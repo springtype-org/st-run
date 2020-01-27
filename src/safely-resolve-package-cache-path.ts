@@ -4,10 +4,9 @@ import {resolve} from "path";
 
 export const npmInternalCacheDir = "_st_run";
 
-export const safelyResolvePackageCachePath = (packageName: string): string => {
-    const baseCachePath = platform() !== "win32" ? resolve(process.env.HOME, ".npm") : resolve(process.env.APPDATA, "npm-cache");
+export const safelyResolvePackageCachePath = (packageName: string, createCacheDirectory: boolean = true): string => {
 
-    const stxCachePath = resolve(baseCachePath, npmInternalCacheDir);
+    const stxCachePath = getStXCacheDirectory();
 
     if (!existsSync(stxCachePath)) {
         mkdirSync(stxCachePath);
@@ -15,8 +14,14 @@ export const safelyResolvePackageCachePath = (packageName: string): string => {
 
     const packageCachePath = resolve(stxCachePath, packageName);
 
-    if (!existsSync(packageCachePath)) {
+    if (createCacheDirectory && !existsSync(packageCachePath)) {
         mkdirSync(packageCachePath);
     }
     return packageCachePath;
+};
+
+export const getStXCacheDirectory = (): string => {
+    const baseCachePath = platform() !== "win32" ? resolve(process.env.HOME, ".npm") : resolve(process.env.APPDATA, "npm-cache");
+
+    return resolve(baseCachePath, npmInternalCacheDir);
 };

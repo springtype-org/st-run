@@ -1,3 +1,5 @@
+export {getPackageVersionedPath} from "./get-package-versioned-path";
+
 export { execute } from "./execute";
 export { fetchLatestPackageVersion } from "./fetch-latest-package-version";
 export { getExecutablePath } from "./get-executable-file";

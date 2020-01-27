@@ -1,5 +1,5 @@
 import { existsSync, unlinkSync } from "fs";
-import { installAndExecute } from "../dist/install-and-execute";
+import { installAndExecute } from "../src";
 
 describe("installs and executes an arbitrary npm module that has a 'bin'", () => {
   beforeEach(() => {

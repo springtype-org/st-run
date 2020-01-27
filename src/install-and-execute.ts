@@ -49,10 +49,10 @@ export const installAndExecute = async (packageName: string, args: Array<string>
         }
       }
     } else {
+      versionToUse = await fetchLatestPackageVersion(`${packageName}@${specificRequestedVersion}`);
       if (!isSpecificRequestedVersionInstalled) {
         console.log("[i] Specific version is not installed. Installing: ", specificRequestedVersion, "...");
         await installPackage(packageName, specificRequestedVersion);
-        versionToUse = specificRequestedVersion;
       }
     }
   } else {

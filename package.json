@@ -1,6 +1,6 @@
 {
   "name": "st-run",
-  "version": "2.0.0-alpha.31",
+  "version": "2.0.0-alpha.32",
   "publishConfig": {
     "access": "public"
   },
@@ -48,13 +48,14 @@
   },
   "dependencies": {
     "chalk": "^2.4.2",
-    "st-cp": "^2.0.0-alpha.4",
-    "st-mkdir": "^1.0.0-alpha.4",
-    "st-rm-rf": "^2.0.0-alpha.8"
+    "st-cp": "^2.0.0-alpha.5",
+    "st-mkdir": "^1.0.0-alpha.6",
+    "st-rm-rf": "^2.0.0-alpha.12"
   },
   "bundleDependencies": [
     "chalk",
-    "st-rm-rf"
+    "st-rm-rf",
+    "st-mkdir"
   ],
   "directories": {
     "test": "test"

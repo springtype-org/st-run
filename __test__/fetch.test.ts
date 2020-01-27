@@ -1,4 +1,4 @@
-import { fetchLatestPackageVersion } from "./../dist/fetch-latest-package-version";
+import { fetchLatestPackageVersion } from "../src";
 
 describe("fetch", () => {
   it("fetches the latest version of st-cp", () => {
