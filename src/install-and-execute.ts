@@ -9,6 +9,7 @@ import { installPackage } from "./install-package";
 import { installPeerDependencies } from "./install-peer-dependencies";
 import { isOnline } from "./is-online";
 import { isPackageInstalled } from "./is-package-installed";
+
 export const installAndExecute = async (packageName: string, args: Array<string>) => {
   // support for system:$command syntax
   if (!packageName) {

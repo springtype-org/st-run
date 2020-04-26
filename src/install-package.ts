@@ -25,24 +25,22 @@ export const installPackage = async (packageName: string, version: string): Prom
 
   writeFileSync(resolve(installCachePath, "README"), `auto`);
 
+  writeFileSync(
+    targetPackageJSONPath,
+    JSON.stringify({
+      "name": '_install_' + packageName,
+      "version": version,
+      "description": "auto",
+      "repository": "auto",
+      "license": "ISC"
+    }, null, 4),
+    {
+      encoding: 'utf8'
+    }
+  );
+
   executeSync(["npm", "install", `${packageName}@${version}`, "--prefix", `"${installCachePath}"`]);
 
-  if (!existsSync(targetPackageJSONPath)) {
-
-    writeFileSync(
-      targetPackageJSONPath,
-      JSON.stringify({
-        "name": packageName + '',
-        "version": version,
-        "description": "auto",
-        "repository": "auto",
-        "license": "ISC"
-      }, null, 4),
-      {
-        encoding: 'utf8'
-      }
-    );
-  }
 
   // write version into cache file for offline cache resolve
   writeFileSync(osPath.resolve(safelyResolvePackageCachePath(packageName), latestInstalledVersionCacheFileName), version);
