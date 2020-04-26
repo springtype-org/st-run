@@ -1,4 +1,5 @@
-import chalk from "chalk";
+
+const chalk = require("chalk");
 import { execute, executeSync } from "./execute";
 import { fetchLatestPackageVersion } from "./fetch-latest-package-version";
 import { getExecutablePath } from "./get-executable-file";

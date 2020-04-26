@@ -1,4 +1,5 @@
-import chalk from "chalk";
+
+const chalk = require("chalk");
 import { execute } from "./execute";
 
 export const fetchLatestPackageVersion = async (packageName: string) => {

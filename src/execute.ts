@@ -1,4 +1,5 @@
-import chalk from "chalk";
+
+const chalk = require("chalk");
 import { exec as childExec, ExecException, ExecOptions, execSync, ExecSyncOptions } from "child_process";
 import { platform } from "os";
 import { osPath } from "./os-path";

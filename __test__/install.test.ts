@@ -7,6 +7,7 @@ import {
     installPackage,
     getExecutablePath
 } from '../src';
+import { createHash } from "crypto";
 
 describe("installs packages in cache", () => {
 

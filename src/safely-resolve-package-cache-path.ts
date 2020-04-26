@@ -1,6 +1,7 @@
-import {existsSync, mkdirSync} from "fs";
-import {platform} from "os"
-import {resolve} from "path";
+import { existsSync, mkdirSync } from "fs";
+import { platform } from "os"
+import { resolve } from "path";
+import { getPackageName } from "./get-package-name";
 
 export const npmInternalCacheDir = "_st_run";
 
@@ -12,7 +13,7 @@ export const safelyResolvePackageCachePath = (packageName: string, createCacheDi
         mkdirSync(stxCachePath);
     }
 
-    const packageCachePath = resolve(stxCachePath, packageName);
+    const packageCachePath = resolve(stxCachePath, getPackageName(packageName));
 
     if (createCacheDirectory && !existsSync(packageCachePath)) {
         mkdirSync(packageCachePath);

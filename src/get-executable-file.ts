@@ -1,6 +1,6 @@
 import {resolve} from "path";
 import {readPackageJson} from "./read-package-json";
-import chalk from "chalk";
+const chalk = require("chalk");
 
 export const getExecutablePath = (packageName: string, versionedPackageCachePath: string) => {
     const modulePath = resolve(versionedPackageCachePath, 'node_modules', packageName);

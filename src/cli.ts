@@ -1,6 +1,5 @@
 #!/usr/bin/env node
-
-import chalk from "chalk";
+const chalk = require("chalk");
 import { execute } from "./execute";
 import { installAndExecute } from "./install-and-execute";
 
