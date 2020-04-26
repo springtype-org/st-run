@@ -3282,12 +3282,12 @@ st-cp@^2.0.0-beta.1:
     chalk "^2.4.2"
     st-rm-rf "2.0.0-beta.1"
 
-st-mkdir@^1.0.0-alpha.6:
-  version "1.0.0-alpha.6"
-  resolved "https://registry.yarnpkg.com/st-mkdir/-/st-mkdir-1.0.0-alpha.6.tgz#aeb39d0929846dacbac2e9223ae84125ee19c39c"
-  integrity sha512-InollATjOnIE5GP7WSV0bOgzhlGU2XWHIrA6DzoaZTI72q3ORI9NT7PxsyfvpvWycuu6ggybqmJ8NltIivM1Kg==
+st-mkdir@^1.0.0-beta.1:
+  version "1.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/st-mkdir/-/st-mkdir-1.0.0-beta.1.tgz#fa00eb38c5db7b8f44c50194bef132a8ebfa120b"
+  integrity sha512-Mq9rDXT12GjYCOV6c2uLnljn7r278Cpw1/+OO2d8EHFz/WmJT01FixVZBtbGZq13V/haZhkJ/J9YRoEVl0l4/g==
   dependencies:
-    chalk "^2.4.2"
+    chalk "^4.0.0"
 
 st-rm-rf@2.0.0-beta.1, st-rm-rf@^2.0.0-beta.1:
   version "2.0.0-beta.1"

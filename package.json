@@ -1,6 +1,6 @@
 {
   "name": "st-run",
-  "version": "2.0.0-beta.3",
+  "version": "2.0.0-beta.4",
   "publishConfig": {
     "access": "public"
   },
@@ -49,7 +49,7 @@
   "dependencies": {
     "chalk": "^4.0.0",
     "st-cp": "^2.0.0-beta.1",
-    "st-mkdir": "^1.0.0-alpha.6",
+    "st-mkdir": "^1.0.0-beta.1",
     "st-rm-rf": "^2.0.0-beta.1"
   },
   "bundleDependencies": [
